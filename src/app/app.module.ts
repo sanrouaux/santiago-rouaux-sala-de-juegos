@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { QuienSoyComponent } from './quien-soy/quien-soy.component';
+import { FirebaseService } from './services/firebase.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { QuienSoyComponent } from './quien-soy/quien-soy.component';
       appId: "1:905050707701:web:21331b5bc46f667f02d7bc"
     })
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
