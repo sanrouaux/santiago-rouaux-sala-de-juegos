@@ -33,5 +33,10 @@ export class LoginComponent implements OnInit {
     this.email = 'santiago@mail.com';
     this.password = '123456';
   }
+
+  cleanFields() {
+    this.email = '';
+    this.password = '';
+  }
   
 }
