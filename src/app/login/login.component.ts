@@ -10,6 +10,9 @@ import { FirebaseService } from '../services/firebase.service';
 })
 export class LoginComponent implements OnInit {
 
+  email:string = '';
+  password:string= '';
+
   constructor(private routes:Router, private firebaseService : FirebaseService) { }
 
   ngOnInit(): void {
@@ -24,6 +27,11 @@ export class LoginComponent implements OnInit {
       this.routes.navigate(['home']);
       console.log('Usuario logueado');
     }
+  }
+
+  fastAccess() {
+    this.email = 'santiago@mail.com';
+    this.password = '123456';
   }
   
 }

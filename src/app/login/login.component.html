@@ -2,14 +2,16 @@
     <img class="mb-4" src="../../assets/dice-logo.png" alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">Ingresar</h1>
     <label for="inputEmail" class="sr-only">Email</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus #emailLogin>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus [(ngModel)]=email>
     <label for="inputPassword" class="sr-only">Contraseña</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required #passwordLogin>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required [(ngModel)]=password>
     <div class="checkbox mb-3">
       <label>
         <input type="checkbox" value="remember-me"> Recordarme
       </label>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit" (click)=onLogin(emailLogin.value,passwordLogin.value)>Entrar</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" (click)=onLogin(email,password)>Entrar</button>
+    <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" (click)=fastAccess()>Acceso Rápido</button>
   </div>
  

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from "@angular/fire/compat";
 
@@ -31,7 +32,8 @@ import { RegistrationComponent } from './registration/registration.component';
       storageBucket: "santiago-rouaux-sala-de-juegos.appspot.com",
       messagingSenderId: "905050707701",
       appId: "1:905050707701:web:21331b5bc46f667f02d7bc"
-    })
+    }),
+    FormsModule
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]
