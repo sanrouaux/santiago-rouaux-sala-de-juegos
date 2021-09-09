@@ -12,15 +12,18 @@ export class FirebaseService {
 
   }
 
-  async signin(email:string, password:string) {
+  async login(email:string, password:string) {
     await this.FirebaseAuth.signInWithEmailAndPassword(email, password)
     .then(res =>{
       this.isLoggedIn = true;
       localStorage.setItem('user',JSON.stringify(res.user));
     })
+    .catch(res=> {
+      console.log('Error');
+    })
   }
 
-  async signup(email:string, password:string) {
+  async register(email:string, password:string) {
     await this.FirebaseAuth.createUserWithEmailAndPassword(email, password)
     .then(res =>{
       this.isLoggedIn = true;
@@ -28,9 +31,12 @@ export class FirebaseService {
     })
   }
 
-  logout() {
-    this.FirebaseAuth.signOut();
-    localStorage.removeItem('user');
+  async logout() {
+    await this.FirebaseAuth.signOut()
+    .then(res=> {
+      this.isLoggedIn = false;
+      localStorage.removeItem('user');
+    })
   }
 
 }
