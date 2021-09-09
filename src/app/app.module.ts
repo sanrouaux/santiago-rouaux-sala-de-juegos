@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { QuienSoyComponent } from './quien-soy/quien-soy.component';
 import { FirebaseService } from './services/firebase.service';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     HomeComponent,
     LoginComponent,
     QuienSoyComponent,
-    NavbarComponent
+    NavbarComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
