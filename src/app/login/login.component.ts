@@ -10,18 +10,12 @@ import { FirebaseService } from '../services/firebase.service';
 })
 export class LoginComponent implements OnInit {
 
-  //isLoggedIn = false;
-
   constructor(private routes:Router, private firebaseService : FirebaseService) { }
 
   ngOnInit(): void {
     if(localStorage.getItem('user') != null) {
       this.routes.navigate(['home']);
     }
-  }
-
-  async onRegistration(email:string, password:string) {
-    await this.firebaseService.register(email, password);
   }
 
   async onLogin(email:string, password:string) {
