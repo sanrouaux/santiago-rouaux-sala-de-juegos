@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from '../services/firebase.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  
+  constructor(private routes:Router, private firebaseService : FirebaseService) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('user') == null) {
+      this.routes.navigate(['login']);
+    }
   }
-
+  
 }
