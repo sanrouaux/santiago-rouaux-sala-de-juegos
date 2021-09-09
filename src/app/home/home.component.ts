@@ -12,9 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(private routes:Router, private firebaseService : FirebaseService) { }
 
   ngOnInit(): void {
-    if(localStorage.getItem('user') == null) {
-      this.routes.navigate(['login']);
-    }
+
   }
   
 }
